@@ -1,2 +1,2 @@
-# Descriptive-Statistics
-This project contains code for descriptive statistics that I computed on various variables. This includes, mean, median, mode, range and standard deviation
+# Data Analysis
+This project contains code for various forms of data analysis including descriptive statistics, data visualisation, simulation
