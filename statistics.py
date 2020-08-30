@@ -1,11 +1,11 @@
-'''The code below calculates the mean'''
+#The code below calculates the mean
 def my_mean(lst):
     total = sum(lst) #function that finds the sum of elements in the list
     n = len(lst) #function that finds the total number of elements in the list
     result = total/n #the mean gotten by dividing total by n 
     return result
     
-'''The code below calculates the median'''
+#The code below calculates the median
 def my_median(lst):
     lst.sort() #sort the list so that it is ordinal(smallest to largest)
     n = len(lst) #get the total number of items in the list
@@ -17,7 +17,7 @@ def my_median(lst):
         result = med1
     return result
     
-'''The code below calculates the mode'''
+#The code below calculates the mode
 def my_mode(lst):
     count = 1 #initial value
     n = len(lst) #the total number of items in the list
@@ -34,14 +34,14 @@ def my_mode(lst):
             count = new #reassingn the value of count
     return lst2[0]
 
-'''The code below calculates the range'''
+#The code below calculates the range
  def my_range(lst):
     max_num = max(lst) #function that finds the largest number in a list
     min_num = min(lst) #function that finds the smallest number in a list
     result = max_num - min_num #range is given by the differece
     return result 
 
-'''The code below calculates the standard deviation'''
+#The code below calculates the standard deviation
 def my_stdev(lst):
     n = len(lst) #the total number of items in the list
     mean = my_mean(lst) #use the mean function defined to compute mean of the list
