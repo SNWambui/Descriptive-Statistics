@@ -1,55 +1,97 @@
-#The code below calculates the mean
 def my_mean(lst):
-    total = sum(lst) #function that finds the sum of elements in the list
-    n = len(lst) #function that finds the total number of elements in the list
-    result = total/n #the mean gotten by dividing total by n 
-    return result
+    """Function to compute the mean of of a list
     
-#The code below calculates the median
+    Args:
+        list
+    
+    Returns:
+        float: the mean of the list
+    """
+    
+    total = sum(lst)  #finds the sum of elements in the list
+    n = len(lst)      #finds the total number of elements in the list
+    result = total/n  #the mean gotten by dividing total by n 
+    return result
+
 def my_median(lst):
-    lst.sort() #sort the list so that it is ordinal(smallest to largest)
-    n = len(lst) #get the total number of items in the list
-    med1 = lst[n//2] #assign the position of the middle number to a variable
+    """Function that computes the median of a given list
+    
+    Args:
+        list
+        
+    Returns:
+        float: median of list
+    """
+    
+    lst.sort()           #sort the list so that it is ordinal(smallest to largest)
+    n = len(lst)         #get the total number of items in the list
+    med1 = lst[n//2]     #assign the position of the middle number to a variable
     med2 = lst[n//2 - 1] #assign the position of the number before the middle number to a variable
-    if n % 2 == 0: #check if the number of items is even and if so, add the two midpoints and divide by two
+    if n % 2 == 0:       #check if the number of items is even and if so, add the two midpoints and divide by two
         result = (med1 + med2)/2
-    else:   #if the number of items is odd, compute just the midpoint
+    else:               #if the number of items is odd, compute just the midpoint
         result = med1
     return result
-    
-#The code below calculates the mode
-def my_mode(lst):
-    count = 1 #initial value
-    n = len(lst) #the total number of items in the list
-    lst2 = [] #new list initiated to append recurring numbers
-    new = 0 #counter to count the number of elements that repeat
-    for i in range(n - 1): #a loop to check for every item in the range below the total number 
-        if lst[i] == lst[i +1]: #if an item is equal to the next item, count it and add it to the new list
-            new = lst.count(i)
-            lst2.append(lst[i])
-        elif lst[i] == lst[i - 1]: #if an item is equal to the item before it 
-            new = lst.count(i) #count it and add it to the new list
-            lst2.append(lst[i])
-        if count <= new: #if the initial value is less than the count of items that are the same,
-            count = new #reassingn the value of count
-    return lst2[0]
 
-#The code below calculates the range
- def my_range(lst):
+
+def my_range(lst):
+    """Function that calculates the range of a list that is max - min
+    
+    Args: 
+        list
+        
+    Returns:
+        float: range of the list
+    """
+    
     max_num = max(lst) #function that finds the largest number in a list
     min_num = min(lst) #function that finds the smallest number in a list
     result = max_num - min_num #range is given by the differece
-    return result 
+    return result
 
-#The code below calculates the standard deviation
+'''The standard deviation measures spread from the mean. To get the standard deviation, define
+a function that takes a list as an argument. Get the total number of items as well as the mean
+using the mean function defined above. Initiate an empty list. For every item in the list(argument),
+get the difference from the mean to measure the spread and square the value of this difference. Append
+these values to a list, get the total sum of these values and asign them a new variable. Divide the result 
+of this summation with the number of items in the original list and get the square root of the answer.'''
 def my_stdev(lst):
-    n = len(lst) #the total number of items in the list
+    """Function that computes the standard deviation (spread from the mean) of a list
+    
+    Args:
+        list
+    
+    Returns:
+        float: standard deviation of the list
+    """
+    
+    n = len(lst)        #the total number of items in the list
     mean = my_mean(lst) #use the mean function defined to compute mean of the list
-    lst2 = [] #initiate another list
-    for i in lst: #for every item in the initital list, get the difference between the item and mean
-                  #and square the result
+    lst2 = []           #initiate another list
+    for i in lst:       #for every item in the initital list, get the difference between the item and mean
+                        #and square the result
         x = (i - mean)**2
-        lst2.append(x) #append the values of the the result to a list
-    lst3 = sum(lst2) #assign to a new variable, the sum of the items in this new list 
+        lst2.append(x)  #append the values of the the result to a list
+    lst3 = sum(lst2)    #assign to a new variable, the sum of the items in this new list 
     result = (lst3/n)**0.5 #divide the total by the number of items and get the square root
     return result
+
+
+def my_stats(data):
+    """Function that computes the summary statistics of a given dataset based on the previously defined functions
+    
+    Args: 
+        dataset
+    
+    Returns:
+        float: length of dataset
+        float: mean of data
+        float: standard deviation of data
+        float: median of data
+        float: range of data
+    """
+    print('Count =', len(data))
+    print('Mean =', my_mean(data))
+    print('Standard deviation =', my_stdev(data))
+    print('Median =', my_median(data))
+    print('Range =', my_range(data))
