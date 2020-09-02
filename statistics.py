@@ -49,12 +49,6 @@ def my_range(lst):
     result = max_num - min_num #range is given by the differece
     return result
 
-'''The standard deviation measures spread from the mean. To get the standard deviation, define
-a function that takes a list as an argument. Get the total number of items as well as the mean
-using the mean function defined above. Initiate an empty list. For every item in the list(argument),
-get the difference from the mean to measure the spread and square the value of this difference. Append
-these values to a list, get the total sum of these values and asign them a new variable. Divide the result 
-of this summation with the number of items in the original list and get the square root of the answer.'''
 def my_stdev(lst):
     """Function that computes the standard deviation (spread from the mean) of a list
     
